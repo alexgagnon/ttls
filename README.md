@@ -1,6 +1,6 @@
 # TTL Helpers
 
-Consists of two parts:
+Consists of two packages:
 
 - `ttl-helpers` library with minimal tagged template literals
-- `ttl-helpers-extension` VS Code extension that provides format-specific Intellisense to the `ttl-helpers` exports
+- `extension` VS Code extension that provides format-specific Intellisense to the `ttl-helpers` exports
