@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "wireit": "^0.14.12"
+  }
+}
