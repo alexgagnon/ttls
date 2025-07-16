@@ -9,11 +9,44 @@
   "scripts": {
     "build": "tsc"
   },
-    "contributes": {
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "contributes": {
     "commands": [
       {
         "command": "first-extension.helloWorld",
         "title": "Hello World"
+      }
+    ],
+    "languages": [
+      {
+        "id": "source.css.ttl-helpers",
+        "aliases": [
+          "CSS TTL Helpers",
+          "css.ttl-helpers"
+        ],
+        "configuration": "./syntaxes/css.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "source.css.ttl-helpers",
+        "scopeName": "source.css.ttl-helpers",
+        "path": "./syntaxes/css.json"
+      },
+      {
+        "injectTo": [
+          "source.ts",
+          "source.js",
+          "source.tsx",
+          "source.jsx"
+        ],
+        "scopeName": "source.css.ttl-helpers.injection",
+        "path": "./syntaxes/css-ttl.json"
       }
     ]
   },
@@ -23,6 +56,7 @@
   "description": "",
   "devDependencies": {
     "@types/vscode": "^1.102.0",
+    "ttl-helpers": "file:../lib",
     "typescript": "^5.8.3"
   }
 }

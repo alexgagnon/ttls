@@ -7,6 +7,7 @@
 			"request": "launch",
 			"args": [
 				"--extensionDevelopmentPath=${workspaceFolder}/packages/extension",
+        "${workspaceFolder}/packages/extension/test"
 			],
 			"outFiles": [
 				"${workspaceFolder}/packages/extension/dist/**/*.js"

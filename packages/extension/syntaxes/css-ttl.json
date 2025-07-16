@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "CSS TTL Helpers",
+  "scopeName": "source.css.ttl-helpers.injection",
+  "injectionSelector": "L:source.js, L:source.ts, L:source.jsx, L:source.tsx",
+  "repository": {},
+  "patterns": [
+    {
+      "name": "meta.tagged-template.css.ttl-helpers",
+      "begin": "\\b(css)\\s*`",
+      "beginCaptures": {
+        "1": {
+          "name": "support.function.tagged-template.css.ttl-helpers"
+        },
+        "0": {
+          "name": "punctuation.definition.template-expression.begin.css.ttl-helpers"
+        }
+      },
+      "end": "`",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.end.css.ttl-helpers"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.css.ttl-helpers"
+        }
+      ]
+    }
+  ]
+}
