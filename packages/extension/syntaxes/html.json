@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "HTML TTL Helpers",
+  "scopeName": "source.html.ttl-helpers",
+  "patterns": [
+    {
+      "include": "text.html.basic"
+    },
+    {
+      "name": "meta.interpolation.js",
+      "begin": "\\${",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.html.ttl"
+        }
+      },
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.html.ttl"
+        }
+      },  
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
+    }
+  ]
+}

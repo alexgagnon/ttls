@@ -1,5 +1,5 @@
-import { describe, it } from 'vitest';
-import { css, html, svg } from './index.js';
+import { describe, it, expect, vi } from 'vitest';
+import { css } from './css.js';
 
 describe('css', () => {
   it('should return a string', ({ expect }) => {
@@ -14,9 +14,9 @@ describe('css', () => {
 }`);
   });
 
-  it('should not throw on invalid CSS', ({ expect }) => {
+  it('should throw on invalid CSS', ({ expect }) => {
     expect(() => {
         css`.hello color: red; }`
-    }).not.toThrow();
+    }).toThrow();
   });
 });

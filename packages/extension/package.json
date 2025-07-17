@@ -16,12 +16,6 @@
     "onLanguage:typescriptreact"
   ],
   "contributes": {
-    "commands": [
-      {
-        "command": "first-extension.helloWorld",
-        "title": "Hello World"
-      }
-    ],
     "languages": [
       {
         "id": "source.css.ttl-helpers",
@@ -30,6 +24,22 @@
           "css.ttl-helpers"
         ],
         "configuration": "./syntaxes/css.json"
+      },
+      {
+        "id": "source.html.ttl-helpers",
+        "aliases": [
+          "HTML TTL Helpers",
+          "html.ttl-helpers"
+        ],
+        "configuration": "./syntaxes/html.json"
+      },
+      {
+        "id": "source.svg.ttl-helpers",
+        "aliases": [
+          "SVG TTL Helpers",
+          "svg.ttl-helpers"
+        ],
+        "configuration": "./syntaxes/svg.json"
       }
     ],
     "grammars": [
@@ -37,6 +47,16 @@
         "language": "source.css.ttl-helpers",
         "scopeName": "source.css.ttl-helpers",
         "path": "./syntaxes/css.json"
+      },
+      {
+        "language": "source.html.ttl-helpers",
+        "scopeName": "source.html.ttl-helpers",
+        "path": "./syntaxes/html.json"
+      },
+      {
+        "language": "source.svg.ttl-helpers",
+        "scopeName": "source.svg.ttl-helpers",
+        "path": "./syntaxes/svg.json"
       },
       {
         "injectTo": [
@@ -47,6 +67,26 @@
         ],
         "scopeName": "source.css.ttl-helpers.injection",
         "path": "./syntaxes/css-ttl.json"
+      },
+      {
+        "injectTo": [
+          "source.ts",
+          "source.js",
+          "source.tsx",
+          "source.jsx"
+        ],
+        "scopeName": "source.html.ttl-helpers.injection",
+        "path": "./syntaxes/html-ttl.json"
+      },
+      {
+        "injectTo": [
+          "source.ts",
+          "source.js",
+          "source.tsx",
+          "source.jsx"
+        ],
+        "scopeName": "source.svg.ttl-helpers.injection",
+        "path": "./syntaxes/svg-ttl.json"
       }
     ]
   },
@@ -55,7 +95,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/vscode": "^1.102.0",
     "ttl-helpers": "file:../lib",
     "typescript": "^5.8.3"
   }

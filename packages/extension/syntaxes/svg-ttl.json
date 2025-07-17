@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "SVG TTL Helpers",
+  "scopeName": "source.svg.ttl-helpers.injection",
+  "injectionSelector": "L:source.js, L:source.ts, L:source.jsx, L:source.tsx",
+  "repository": {},
+  "patterns": [
+    {
+      "name": "meta.tagged-template.svg.ttl-helpers",
+      "begin": "\\b(svg)\\s*`",
+      "beginCaptures": {
+        "1": {
+          "name": "support.function.tagged-template.svg.ttl-helpers"
+        },
+        "0": {
+          "name": "punctuation.definition.template-expression.begin.svg.ttl-helpers"
+        }
+      },
+      "end": "`",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.end.svg.ttl-helpers"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.svg.ttl-helpers"
+        }
+      ]
+    }
+  ]
+}
