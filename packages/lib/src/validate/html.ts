@@ -38,7 +38,6 @@ function validate(html: string, validator: HtmlValidate): void {
   if (!report.valid) {
     const errors = report.results[0]?.messages
       .filter((msg: any) => msg.severity === 2) // Only errors, not warnings
-      .map((msg: any) => `${msg.message} (line ${msg.line}, column ${msg.column})`)
       .join('; ');
     
     if (errors) {

@@ -13,4 +13,3 @@ function validate(svg: string): void {
     throw new Error(`Invalid SVG: ${report}`);
   }
 }
-
