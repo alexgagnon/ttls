@@ -10,14 +10,17 @@ on:
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/lib
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
-      - run: npm ci -w packages/lib
-      - run: npm test -w packages/lib
-      - run: npm publish -w packages/lib
+      - run: npm ci
+      - run: npm test
+      - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
