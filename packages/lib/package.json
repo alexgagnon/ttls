@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./validate": "./dist/validate/index.js",
+    "./validate/*.js": "./dist/validate/*.js"
   },
   "scripts": {
     "build": "tsc"
@@ -14,13 +16,12 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^24.0.14",
-    "fast-xml-parser": "^5.2.5",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   },
   "dependencies": {
+    "fast-xml-parser": "^5.2.5",
     "html-validate": "^9.7.1",
-    "lightningcss": "^1.30.1",
-    "parse5": "^8.0.0"
+    "lightningcss": "^1.30.1"
   }
 }

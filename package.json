@@ -4,8 +4,15 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces"
+  },
   "devDependencies": {
-    "typescript": "^5.8.3",
-    "wireit": "^0.14.12"
+    "@changesets/cli": "^2.29.5",
+    "typescript": "^5.8.3"
   }
 }
