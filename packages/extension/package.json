@@ -1,7 +1,12 @@
 {
-  "name": "@ttl-helpers/extension",
+  "name": "ttl-helpers-extension",
   "displayName": "TTL Helpers",
-  "version": "1.0.0",
+  "publisher": "alexgagnon",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexgagnon/ttl-helpers"
+  },
   "engines": {
     "vscode": "^1.101.0"
   },
