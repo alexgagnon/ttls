@@ -4,9 +4,6 @@
   "scopeName": "source.css.ttl-helpers",
   "patterns": [
     {
-      "include": "source.css"
-    },
-    {
       "name": "meta.interpolation.js",
       "begin": "\\${",
       "beginCaptures": {
@@ -25,6 +22,9 @@
           "include": "source.js"
         }
       ]
+    },
+    {
+      "include": "source.css.shiki"
     }
   ]
 }

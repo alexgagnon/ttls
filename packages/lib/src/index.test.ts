@@ -1,5 +1,5 @@
 import { describe, it } from 'vitest';
-import { css, html, svg } from './index.js';
+import { css } from './index.js';
 
 describe('css', () => {
   it('should return a string', ({ expect }) => {

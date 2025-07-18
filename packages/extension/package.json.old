@@ -1,0 +1,124 @@
+{
+  "name": "ttl-helpers-extension",
+  "displayName": "TTL Helpers",
+  "publisher": "alexgagnon",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexgagnon/ttl-helpers/packages/extension"
+  },
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "contributes": {
+    "typescriptServerPlugins": [
+      {
+        "name": "ttl-helpers-typescript-plugin",
+        "enableForWorkspaceTypeScriptVersions": true
+      }
+    ],
+    "languages": [
+      {
+        "id": "source.css.ttl-helpers",
+        "aliases": [
+          "CSS TTL Helpers",
+          "css.ttl-helpers"
+        ],
+        "configuration": "./syntaxes/css.json"
+      },
+      {
+        "id": "source.html.ttl-helpers",
+        "aliases": [
+          "HTML TTL Helpers",
+          "html.ttl-helpers"
+        ],
+        "configuration": "./syntaxes/html.json"
+      },
+      {
+        "id": "source.svg.ttl-helpers",
+        "aliases": [
+          "SVG TTL Helpers",
+          "svg.ttl-helpers"
+        ],
+        "configuration": "./syntaxes/svg.json"
+      }
+    ],
+    "grammars": [
+      {
+        "scopeName": "source.css.shiki",
+        "path": "./syntaxes/css.shiki.json"
+      },
+      {
+        "language": "source.css.ttl-helpers",
+        "scopeName": "source.css.ttl-helpers",
+        "path": "./syntaxes/css.json"
+      },
+      {
+        "language": "source.html.ttl-helpers",
+        "scopeName": "source.html.ttl-helpers",
+        "path": "./syntaxes/html.json"
+      },
+      {
+        "language": "source.svg.ttl-helpers",
+        "scopeName": "source.svg.ttl-helpers",
+        "path": "./syntaxes/svg.json"
+      },
+      {
+        "injectTo": [
+          "source.ts",
+          "source.js",
+          "source.tsx",
+          "source.jsx"
+        ],
+        "scopeName": "source.css.ttl-helpers.injection",
+        "path": "./syntaxes/css-ttl.json"
+      },
+      {
+        "injectTo": [
+          "source.ts",
+          "source.js",
+          "source.tsx",
+          "source.jsx"
+        ],
+        "scopeName": "source.html.ttl-helpers.injection",
+        "path": "./syntaxes/html-ttl.json"
+      },
+      {
+        "injectTo": [
+          "source.ts",
+          "source.js",
+          "source.tsx",
+          "source.jsx"
+        ],
+        "scopeName": "source.svg.ttl-helpers.injection",
+        "path": "./syntaxes/svg-ttl.json"
+      }
+    ]
+  },
+  "keywords": [
+    "syntax-highlighting",
+    "vscode-extension",
+    "css",
+    "html",
+    "svg"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "Provides syntax highlighting for tagged template literals from the `ttl-helpers` library.",
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "@types/vscode": "^1.102.0",
+    "ttl-helpers": "file:../lib",
+    "typescript": "^5.8.3"
+  }
+}

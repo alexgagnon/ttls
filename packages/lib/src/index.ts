@@ -1,16 +1,10 @@
-export function css(strings: TemplateStringsArray, ...values: any[]): string {
-  return ttl(strings, values);
-}
+export type TTL = (strings: TemplateStringsArray, ...values: any[]) => string;
 
-export function html(strings: TemplateStringsArray, ...values: any[]): string {
-  return ttl(strings, values);
-}
+export const css: TTL = (...args) => ttl(...args);
+export const html: TTL = (...args) => ttl(...args);
+export const xml: TTL = (...args) => ttl(...args);
 
-export function svg(strings: TemplateStringsArray, ...values: any[]): string {
-  return ttl(strings, values);
-}
-
-function ttl(strings: TemplateStringsArray, values: unknown[]): string {
+const ttl: TTL = (strings: TemplateStringsArray, ...values: any[]) => {
   let result = '';
   for (let i = 0; i < strings.length; i++) {
     result += strings[i];
