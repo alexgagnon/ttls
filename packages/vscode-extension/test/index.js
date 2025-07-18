@@ -2,26 +2,23 @@ import { css, html, xml } from 'ttls';
 
 const padding = '10px';
 
-css`.hello {
-  color: #000;
-
-  ${padding && css`.something {
-    padding: ${padding};
-  }`}
-
-  align-items: center;
-}`;
+css`.hello { color: #000; align-items: center; line-height: 1.5; }`;
 
 css`@media screen (max-width: 600px) {
   .hello {
     color: red;
     line-height: 1.5;
-    
   }
 
   @container {
     .hello {
       color: blue;
+      fdjkl: 'value';
+      padding: 10px;
+    }
+
+    .another {
+      color: green;
     }
   }
 }`

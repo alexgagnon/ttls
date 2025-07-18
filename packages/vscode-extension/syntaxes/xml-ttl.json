@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "SVG TTL Injection",
-  "scopeName": "source.svg.ttl.injection",
+  "name": "XML TTL Injection",
+  "scopeName": "source.xml.ttl.injection",
   "injectionSelector": "L:source.js, L:source.ts, L:source.jsx, L:source.tsx",
   "repository": {},
   "patterns": [
     {
       "name": "meta.tagged-template.xml.ttl",
-      "begin": "\\b(svg)\\s*`",
+      "begin": "\\b(xml)\\s*`",
       "beginCaptures": {
         "1": {
           "name": "support.function.tagged-template.xml.ttl"

@@ -24,7 +24,7 @@
       },
       "patterns": [
         {
-          "include": "source.css.ttl-helpers"
+          "include": "source.css.ttl"
         }
       ]
     }

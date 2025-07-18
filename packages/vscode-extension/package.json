@@ -21,8 +21,78 @@
     "onLanguage:typescriptreact"
   ],
   "contributes": {
+    "languages": [
+      {
+        "id": "source.css.ttl",
+        "aliases": [
+          "CSS TTL",
+          "css.ttl"
+        ],
+        "configuration": "./syntaxes/css.json"
+      },
+      {
+        "id": "source.html.ttl",
+        "aliases": [
+          "HTML TTL",
+          "html.ttl"
+        ],
+        "configuration": "./syntaxes/html.json"
+      },
+      {
+        "id": "source.xml.ttl",
+        "aliases": [
+          "XML TTL",
+          "xml.ttl"
+        ],
+        "configuration": "./syntaxes/xml.json"
+      }
+    ],
     "grammars": [
-      
+      {
+        "scopeName": "source.css.ttl",
+        "path": "./syntaxes/css.json"
+      },
+      {
+        "scopeName": "source.html.ttl",
+        "path": "./syntaxes/html.json"
+      },
+      {
+        "scopeName": "source.xml.ttl",
+        "path": "./syntaxes/xml.json"
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.basic"
+        ],
+        "scopeName": "source.css.ttl.injection",
+        "path": "./syntaxes/css-ttl.json"
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.basic"
+        ],
+        "scopeName": "source.html.ttl.injection",
+        "path": "./syntaxes/html-ttl.json"
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.basic"
+        ],
+        "scopeName": "source.xml.ttl.injection",
+        "path": "./syntaxes/xml-ttl.json"
+      }
     ]
   },
   "keywords": [

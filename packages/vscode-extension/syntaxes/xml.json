@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "SVG TTL Embedded",
+  "name": "XML TTL Embedded",
   "scopeName": "source.xml.ttl",
   "patterns": [
     {
