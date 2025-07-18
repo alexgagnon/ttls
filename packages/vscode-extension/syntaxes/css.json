@@ -1,23 +1,20 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "SVG TTL Helpers",
-  "scopeName": "source.svg.ttl-helpers",
+  "name": "CSS TTL Embedded",
+  "scopeName": "source.css.ttl",
   "patterns": [
-    {
-      "include": "text.xml"
-    },
     {
       "name": "meta.interpolation.js",
       "begin": "\\${",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.section.embedded.begin.svg.ttl"
+          "name": "punctuation.section.embedded.begin.css.ttl"
         }
       },
       "end": "}",
       "endCaptures": {
         "0": {
-          "name": "punctuation.section.embedded.end.svg.ttl"
+          "name": "punctuation.section.embedded.end.css.ttl"
         }
       },  
       "patterns": [
@@ -25,6 +22,9 @@
           "include": "source.js"
         }
       ]
+    },
+    {
+      "include": "source.css"
     }
   ]
 }

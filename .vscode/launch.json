@@ -6,12 +6,12 @@
 			"type": "extensionHost",
 			"request": "launch",
 			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}/packages/extension",
+				"--extensionDevelopmentPath=${workspaceFolder}/packages/vscode-extension",
 				"--disable-extensions",
-        "${workspaceFolder}/packages/extension/test"
+        "${workspaceFolder}/packages/vscode-extension/test"
 			],
 			"outFiles": [
-				"${workspaceFolder}/packages/extension/dist/**/*.js"
+				"${workspaceFolder}/packages/vscode-extension/dist/**/*.js"
 			],
 			"preLaunchTask": "${defaultBuildTask}"
 		} 

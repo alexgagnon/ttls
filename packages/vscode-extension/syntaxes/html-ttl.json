@@ -1,30 +1,30 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "HTML TTL Helpers",
-  "scopeName": "source.html.ttl-helpers.injection",
+  "name": "HTML TTL Injection",
+  "scopeName": "source.html.ttl.injection",
   "injectionSelector": "L:source.js, L:source.ts, L:source.jsx, L:source.tsx",
   "repository": {},
   "patterns": [
     {
-      "name": "meta.tagged-template.html.ttl-helpers",
+      "name": "meta.tagged-template.html.ttl",
       "begin": "\\b(html)\\s*`",
       "beginCaptures": {
         "1": {
-          "name": "support.function.tagged-template.html.ttl-helpers"
+          "name": "support.function.tagged-template.html.ttl"
         },
         "0": {
-          "name": "punctuation.definition.template-expression.begin.html.ttl-helpers"
+          "name": "punctuation.definition.template-expression.begin.html.ttl"
         }
       },
       "end": "`",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.template-expression.end.html.ttl-helpers"
+          "name": "punctuation.definition.template-expression.end.html.ttl"
         }
       },
       "patterns": [
         {
-          "include": "source.html.ttl-helpers"
+          "include": "source.html.ttl"
         }
       ]
     }
