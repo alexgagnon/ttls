@@ -21,93 +21,26 @@
     "onLanguage:typescriptreact"
   ],
   "contributes": {
-    "configuration": [
-      {
-        "id": "ttl-helpers",
-        "title": "TTL Helpers",
-        "properties": {}
-      }
-    ],
     "grammars": [
-      {
-        "injectTo": [
-          "source.js",
-          "source.js.jsx",
-          "source.jsx",
-          "source.ts",
-          "source.tsx",
-          "text.html.basic"
-        ],
-        "scopeName": "inline.css-ttl",
-        "path": "./syntaxes/css-ttl.json",
-        "embeddedLanguages": {
-          "meta.embedded.block.css": "css",
-          "source.css": "css"
-        }
-      },
-      {
-        "language": "css",
-        "scopeName": "source.css.ttl",
-        "path": "./syntaxes/css.json"
-      },
-      {
-        "injectTo": [
-          "source.js",
-          "source.js.jsx",
-          "source.jsx",
-          "source.ts",
-          "source.tsx",
-          "text.html.basic"
-        ],
-        "scopeName": "inline.html-ttl",
-        "path": "./syntaxes/html-ttl.json",
-        "embeddedLanguages": {
-          "meta.embedded.block.html": "html",
-          "text.html": "html"
-        }
-      },
-      {
-        "language": "html",
-        "scopeName": "text.html.ttl",
-        "path": "./syntaxes/html.json"
-      },
-      {
-        "injectTo": [
-          "source.js",
-          "source.js.jsx",
-          "source.jsx",
-          "source.ts",
-          "source.tsx",
-          "text.html.basic"
-        ],
-        "scopeName": "inline.svg-ttl",
-        "path": "./syntaxes/svg-ttl.json",
-        "embeddedLanguages": {
-          "meta.embedded.block.svg": "xml",
-          "text.xml": "xml"
-        }
-      },
-      {
-        "language": "xml",
-        "scopeName": "text.xml.svg.ttl",
-        "path": "./syntaxes/svg.json"
-      }
+      
     ]
   },
   "keywords": [
     "syntax-highlighting",
+    "tagged-template-literals",
     "vscode-extension",
     "css",
     "html",
-    "svg"
+    "svg",
+    "xml"
   ],
   "author": "",
   "license": "ISC",
-  "description": "Provides syntax highlighting for tagged template literals from the `ttl-helpers` library.",
+  "description": "Provides syntax highlighting for tagged template literals from the `ttls` library.",
   "devDependencies": {
     "@types/node": "^24.0.14",
     "@types/vscode": "^1.102.0",
-    "ttl-helpers": "file:../lib",
+    "ttls": "file:../lib",
     "typescript": "^5.8.3"
   }
 }

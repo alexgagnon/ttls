@@ -1,5 +1,5 @@
-import { transform, type CustomAtRules, type TransformOptions } from 'lightningcss';
-import { css as curried } from '../curried/index.js';
+import { transform } from 'lightningcss';
+import { css as curried } from '../curry/index.js';
 
 const cssttl = curried((css: string) => {
   try {
