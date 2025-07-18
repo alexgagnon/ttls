@@ -7,6 +7,7 @@
     "./validate": "./dist/validate/index.js",
     "./validate/*.js": "./dist/validate/*.js"
   },
+  "files": ["dist"],
   "scripts": {
     "build": "tsc"
   },

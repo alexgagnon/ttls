@@ -1,8 +1,0 @@
-**/*
-!dist/**
-!syntaxes/**
-!package.json
-!README.md
-!CHANGELOG.md
-!LICENSE
-
