@@ -1,7 +1,5 @@
 ../**/*
 ../../**/*
-
-# Exclude development files
 src/
 test/
 tsconfig.json
