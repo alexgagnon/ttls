@@ -1,6 +1,6 @@
 {
   "name": "ttls",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -8,7 +8,9 @@
     "./validate": "./dist/validate/index.js",
     "./validate/*.js": "./dist/validate/*.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },
