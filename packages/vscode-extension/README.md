@@ -5,7 +5,7 @@ Provides syntax highlighting for the tagged template literal exports from the [`
 ```js
 import { css, html, xml } from 'ttls';
 
-// each of these while have syntax specific highlighting
+// each of these will have syntax specific highlighting
 html`<div>
 <style>
   ${css`svg { fill: blue; }`}
