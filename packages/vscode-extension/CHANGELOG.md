@@ -1,5 +1,11 @@
 # vscode-ttls
 
+## 0.0.1
+
+### Patch Changes
+
+- update documentation
+
 ## 0.0.0
 
 ### Patch Changes
