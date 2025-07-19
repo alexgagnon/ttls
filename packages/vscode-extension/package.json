@@ -104,11 +104,7 @@
     "svg",
     "xml"
   ],
-  "files": [
-    "syntaxes",
-    "dist"
-  ],
-  "author": "",
+  "author": "alexgagnon",
   "license": "ISC",
   "description": "Provides syntax highlighting for tagged template literals from the `ttls` library.",
   "devDependencies": {

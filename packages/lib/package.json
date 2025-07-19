@@ -4,6 +4,7 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
+    "./curry": "./dist/curry/index.js",
     "./validate": "./dist/validate/index.js",
     "./validate/*.js": "./dist/validate/*.js"
   },
@@ -12,9 +13,9 @@
     "build": "tsc"
   },
   "keywords": [],
-  "author": "",
+  "author": "alexgagnon",
   "license": "ISC",
-  "description": "",
+  "description": "Tagged template literals for various languages.",
   "devDependencies": {
     "@types/node": "^24.0.14",
     "typescript": "^5.8.3",

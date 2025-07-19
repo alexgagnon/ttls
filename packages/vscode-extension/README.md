@@ -1,7 +1,15 @@
-# TTL Helpers Extension
+# TTLs VS Code Extension
 
-Right now this extension offers syntax highlighting for the `html`, `css`, and `xml` tagged template literals exported from the `ttl-helpers` library.
+Provides syntax highlighting for the tagged template literal exports from the [`ttls` package](https://www.npmjs.com/package/ttls).
 
-In the future the goal is to offer full Intellisense completions as well. 
+```js
+import { css, html, xml } from 'ttls';
 
-[See notes](./NOTES.md) for an outline of how it works.
+// each of these while have syntax specific highlighting
+html`<div>
+<style>
+  ${css`svg { fill: blue; }`}
+</style>
+${xml`<svg width="100" height="100"><circle cx="50" cy="50" r="40" /></svg>`}
+</div>`;
+```
