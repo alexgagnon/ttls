@@ -4,9 +4,6 @@
   "scopeName": "source.html.ttl",
   "patterns": [
     {
-      "include": "text.html.basic"
-    },
-    {
       "name": "meta.interpolation.js",
       "begin": "\\${",
       "beginCaptures": {
@@ -25,6 +22,9 @@
           "include": "source.js"
         }
       ]
+    },
+    {
+      "include": "text.html.basic"
     }
   ]
 }
