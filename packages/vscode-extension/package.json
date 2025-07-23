@@ -18,7 +18,8 @@
     "onLanguage:javascript",
     "onLanguage:typescript",
     "onLanguage:javascriptreact",
-    "onLanguage:typescriptreact"
+    "onLanguage:typescriptreact",
+    "onLanguage:html"
   ],
   "contributes": {
     "languages": [
@@ -66,7 +67,9 @@
           "source.ts",
           "source.jsx",
           "source.tsx",
-          "text.html.basic"
+          "text.html.basic",
+          "meta.embedded.block.html",
+          "text.html.derivative"
         ],
         "scopeName": "source.css.ttl.injection",
         "path": "./syntaxes/css-ttl.json"
@@ -77,7 +80,9 @@
           "source.ts",
           "source.jsx",
           "source.tsx",
-          "text.html.basic"
+          "text.html.basic",
+          "meta.embedded.block.html",
+          "text.html.derivative"
         ],
         "scopeName": "source.html.ttl.injection",
         "path": "./syntaxes/html-ttl.json"
