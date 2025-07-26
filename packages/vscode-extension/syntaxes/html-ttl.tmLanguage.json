@@ -1,0 +1,70 @@
+{
+  "name": "TTLS - Tagged Template Literals",
+  "scopeName": "source.js.html-ttl",
+  "injectionSelector": "L:source.js -string, L:source.jsx -string, L:source.ts -string, L:source.tsx -string, L:source.js.embedded.html -string",
+  "patterns": [
+    {
+      "contentName": "meta.embedded.block.html",
+      "begin": "\\b(html)\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.js" },
+        "2": { "name": "punctuation.definition.string.template.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.string.template.end.js" }
+      },
+      "patterns": [
+        {
+          "include": "source.js#template-substitution-element"
+        },
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
+    {
+      "contentName": "meta.embedded.block.css",
+      "begin": "\\b(css)\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.js" },
+        "2": { "name": "punctuation.definition.string.template.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.string.template.end.js" }
+      },
+      "patterns": [
+        {
+          "include": "source.js#template-substitution-element"
+        },
+        {
+          "include": "source.css"
+        }
+      ]
+    },
+    {
+      "contentName": "meta.embedded.block.xml",
+      "begin": "\\b(xml)\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.js" },
+        "2": { "name": "punctuation.definition.string.template.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.string.template.end.js" }
+      },
+      "patterns": [
+        {
+          "include": "source.js#template-substitution-element"
+        },
+        {
+          "include": "text.xml"
+        }
+      ]
+    },
+    {
+      "include": "source.js#template-substitution-element"
+    }
+  ]
+}
