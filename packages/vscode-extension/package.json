@@ -24,21 +24,37 @@
   "contributes": {
     "grammars": [
       {
-        "scopeName": "source.js.html-ttl",
-        "path": "./syntaxes/html-ttl.tmLanguage.json",
         "injectTo": [
           "source.js",
-          "source.jsx",
           "source.ts",
-          "source.tsx"
-        ]
+          "source.jsx",
+          "source.tsx",
+          "text.html.derivative"
+        ],
+        "scopeName": "source.css.ttl",
+        "path": "./syntaxes/css-ttl.tmLanguage.json"
       },
       {
-        "scopeName": "text.html.ttls",
-        "path": "./syntaxes/html-ttls.tmLanguage.json",
         "injectTo": [
-          "text.html.basic"
-        ]
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.derivative"
+        ],
+        "scopeName": "source.html.ttl",
+        "path": "./syntaxes/html-ttl.tmLanguage.json"
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.derivative"
+        ],
+        "scopeName": "source.xml.ttl",
+        "path": "./syntaxes/xml-ttl.tmLanguage.json"
       }
     ]
   },

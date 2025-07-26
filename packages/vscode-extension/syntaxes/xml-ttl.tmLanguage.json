@@ -1,24 +1,24 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "HTML TTL",
-  "scopeName": "source.html.ttl",
+  "name": "XML TTL",
+  "scopeName": "source.xml.ttl",
   "injectionSelector": "L:source.js, L:source.ts, L:source.jsx, L:source.tsx",
   "patterns": [
     {
-      "name": "meta.tagged-template.html.ttl",
-      "begin": "\\b(html)\\s*`",
+      "name": "meta.tagged-template.xml.ttl",
+      "begin": "\\b(xml)\\s*`",
       "beginCaptures": {
         "1": {
-          "name": "support.function.tagged-template.html.ttl"
+          "name": "support.function.tagged-template.xml.ttl"
         },
         "0": {
-          "name": "punctuation.definition.template-expression.begin.html.ttl"
+          "name": "punctuation.definition.template-expression.begin.xml.ttl"
         }
       },
       "end": "`",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.template-expression.end.html.ttl"
+          "name": "punctuation.definition.template-expression.end.xml.ttl"
         }
       },
       "patterns": [
@@ -26,7 +26,7 @@
           "include": "source.js#template-substitution-element"
         },
         {
-          "include": "text.html.derivative"
+          "include": "text.xml"
         }
       ]
     },

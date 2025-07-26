@@ -1,4 +1,28 @@
-<script>
-  html`<div ${spread({thing: 'one'})}></div>`;
-  css`div { color: red; }`;
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+  <script>
+    import { spread, ifDefined, toClassString, toStyleString, html, css } from 'ttls';
+
+    html`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}></div>`
+
+    css`
+      .test {
+        background-color: ;
+      }
+      .test span {
+        font-weight: bold;
+      }
+    `
+
+    xml`<node thing="hello">
+      <child>World</child>
+    </node>`;
+  </script>
+</body>
+</html>
