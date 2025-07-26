@@ -1,6 +1,6 @@
 import { css, html, xml } from 'ttls';
 
-html`<div ${spread({ class: 'container' })}>
+html`<div class="something" ${spread({ class: 'container' })}>
 <style>
   ${css`svg { fill: blue; }`}
 </style>

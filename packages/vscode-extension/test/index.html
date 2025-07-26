@@ -7,18 +7,22 @@
 </head>
 <body>
   <script>
-    import { spread, ifDefined, toClassString, toStyleString, html, css } from 'lit-html';
+    import { spread, ifDefined, toClassString, toStyleString, html, css } from 'ttls';
 
     html`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}></div>`
 
     css`
       .test {
-        background-color: lightblue;
+        background-color: ;
       }
       .test span {
         font-weight: bold;
       }
     `
+
+    xml`<node thing="hello">
+      <child>World</child>
+    </node>`;
   </script>
 </body>
 </html>

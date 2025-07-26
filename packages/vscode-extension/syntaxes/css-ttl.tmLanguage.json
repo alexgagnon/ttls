@@ -1,9 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "CSS TTL Injection",
-  "scopeName": "source.css.ttl.injection",
-  "injectionSelector": "L:source.js, L:source.ts, L:source.jsx, L:source.tsx, L:meta.embedded.block.html, L:text.html.derivative",
-  "repository": {},
+  "name": "CSS TTL",
+  "scopeName": "source.css.ttl",
+  "injectionSelector": "L:source.js, L:source.ts, L:source.jsx, L:source.tsx",
   "patterns": [
     {
       "name": "meta.tagged-template.css.ttl",
@@ -24,9 +23,15 @@
       },
       "patterns": [
         {
-          "include": "source.css.ttl"
+          "include": "source.js#template-substitution-element"
+        },
+        {
+          "include": "source.css"
         }
       ]
+    },
+    {
+      "include": "source.js#template-substitution-element"
     }
   ]
 }

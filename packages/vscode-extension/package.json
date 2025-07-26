@@ -22,79 +22,39 @@
     "onLanguage:html"
   ],
   "contributes": {
-    "languages": [
-      {
-        "id": "source.css.ttl",
-        "aliases": [
-          "CSS TTL",
-          "css.ttl"
-        ],
-        "configuration": "./syntaxes/css.json"
-      },
-      {
-        "id": "source.html.ttl",
-        "aliases": [
-          "HTML TTL",
-          "html.ttl"
-        ],
-        "configuration": "./syntaxes/html.json"
-      },
-      {
-        "id": "source.xml.ttl",
-        "aliases": [
-          "XML TTL",
-          "xml.ttl"
-        ],
-        "configuration": "./syntaxes/xml.json"
-      }
-    ],
     "grammars": [
       {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.derivative"
+        ],
         "scopeName": "source.css.ttl",
-        "path": "./syntaxes/css.json"
+        "path": "./syntaxes/css-ttl.tmLanguage.json"
       },
       {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.derivative"
+        ],
         "scopeName": "source.html.ttl",
-        "path": "./syntaxes/html.json"
+        "path": "./syntaxes/html-ttl.tmLanguage.json"
       },
       {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.derivative"
+        ],
         "scopeName": "source.xml.ttl",
-        "path": "./syntaxes/xml.json"
-      },
-      {
-        "injectTo": [
-          "source.js",
-          "source.ts",
-          "source.jsx",
-          "source.tsx",
-          "meta.embedded.block.html",
-          "text.html.derivative"
-        ],
-        "scopeName": "source.css.ttl.injection",
-        "path": "./syntaxes/css-ttl.json"
-      },
-      {
-        "injectTo": [
-          "source.js",
-          "source.ts",
-          "source.jsx",
-          "source.tsx",
-          "meta.embedded.block.html",
-          "text.html.derivative"
-        ],
-        "scopeName": "source.html.ttl.injection",
-        "path": "./syntaxes/html-ttl.json"
-      },
-      {
-        "injectTo": [
-          "source.js",
-          "source.ts",
-          "source.jsx",
-          "source.tsx",
-          "text.html.basic"
-        ],
-        "scopeName": "source.xml.ttl.injection",
-        "path": "./syntaxes/xml-ttl.json"
+        "path": "./syntaxes/xml-ttl.tmLanguage.json"
       }
     ]
   },
