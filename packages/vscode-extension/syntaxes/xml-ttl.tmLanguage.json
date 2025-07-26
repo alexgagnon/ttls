@@ -6,7 +6,7 @@
   "patterns": [
     {
       "name": "meta.tagged-template.xml.ttl",
-      "begin": "\\b(xml)\\s*`",
+      "begin": "(?<!\\w)(xml)\\s*`",
       "beginCaptures": {
         "1": {
           "name": "support.function.tagged-template.xml.ttl"
