@@ -2,24 +2,26 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "XML TTL",
   "scopeName": "source.xml.ttl",
-  "injectionSelector": "L:source.js, L:source.ts, L:source.jsx, L:source.tsx",
+  "injectionSelector": "L:source.js -comment -string, L:source.ts, L:source.jsx, L:source.tsx, L:meta.embedded.block.html source.js",
   "patterns": [
     {
-      "name": "meta.tagged-template.xml.ttl",
-      "begin": "(?<!\\w)(xml)\\s*`",
+      "include": "#xml-tagged-template"
+    },
+    {
+      "include": "source.js#template-substitution-element"
+    }
+  ],
+  "repository": {
+    "xml-tagged-template": {
+      "name": "meta.template.string.xml.js",
+      "begin": "(\/\\*+\\s*xml\\s*\\*+\/|\\bxml)(`)",
       "beginCaptures": {
-        "1": {
-          "name": "support.function.tagged-template.xml.ttl"
-        },
-        "0": {
-          "name": "punctuation.definition.template-expression.begin.xml.ttl"
-        }
+        "1": { "name": "entity.name.function.tagged-template.js" },
+        "2": { "name": "punctuation.definition.string.template.begin.js" }
       },
-      "end": "`",
+      "end": "(`)",
       "endCaptures": {
-        "0": {
-          "name": "punctuation.definition.template-expression.end.xml.ttl"
-        }
+        "1": { "name": "punctuation.definition.string.template.end.js" }
       },
       "patterns": [
         {
@@ -29,9 +31,6 @@
           "include": "text.xml"
         }
       ]
-    },
-    {
-      "include": "source.js#template-substitution-element"
     }
-  ]
+  }
 }

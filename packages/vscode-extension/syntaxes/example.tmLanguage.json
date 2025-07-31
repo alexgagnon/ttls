@@ -1,20 +1,20 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "HTML TTL",
-  "scopeName": "source.html.ttl",
+  "name": "TODO TTL",
+  "scopeName": "source.TODO.ttl",
   "injectionSelector": "L:source.js -comment -string, L:source.ts, L:source.jsx, L:source.tsx, L:meta.embedded.block.html source.js",
   "patterns": [
     {
-      "include": "#html-tagged-template"
+      "include": "#TODO-tagged-template"
     },
     {
       "include": "source.js#template-substitution-element"
     }
   ],
   "repository": {
-    "html-tagged-template": {
-      "name": "meta.template.string.html.js",
-      "begin": "(\/\\*+\\s*html\\s*\\*+\/|\\bhtml)(`)",
+    "TODO-tagged-template": {
+      "name": "meta.template.string.TODO.js",
+      "begin": "(\/\\*+\\s*TODO\\s*\\*+\/|\\bTODO)(`)",
       "beginCaptures": {
         "1": { "name": "entity.name.function.tagged-template.js" },
         "2": { "name": "punctuation.definition.string.template.begin.js" }
@@ -28,7 +28,7 @@
           "include": "source.js#template-substitution-element"
         },
         {
-          "include": "text.html.derivative"
+          "include": "TODO // you may need to dig around to find the correct value"
         }
       ]
     }

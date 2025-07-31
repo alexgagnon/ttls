@@ -1,32 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test</title>
-</head>
-<body>
-  <script>
-    import { spread, ifDefined, toClassString, toStyleString, html, css } from 'ttls';
+<script>
+html`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}>
+  <span>Test Content</span>
+  <ul>
+    ${true ? [1, 2, 3].map(item => html`<li>${item}</li>`) : html`<li>Empty</li>`}
+  </ul>
+</div>`
 
-    console.log(`${something}.xml`, 'blah');
-    console.log(`${something}.html`, 'blah');
-    console.log(`${something}.css`, 'blah');
+/*html*/`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}>
+  <span>Test Content</span>
+  <ul>
+    ${true ? [1, 2, 3].map(item => html`<li>${item}</li>`) : html`<li>Empty</li>`}
+  </ul>
+</div>`
+console.log(`${`something`}.html`, `blah`);
+console.log(`${`something`}.html`, `blah`);
 
-    html`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}></div>`
+css`
+.containers { 
+  display: flex;
 
-    css`
-      .test {
-        background-color: ;
-      }
-      .test span {
-        font-weight: bold;
-      }
-    `
+  ${true 
+    ? css`
+    .hello {
+      background-color: lightblue;
+    }
+  ` : css`
+    .something {
+      background-color: blue;
+    }
+  `}
+}`;
 
-    xml`<node thing="hello">
-      <child>World</child>
-    </node>`;
-  </script>
-</body>
-</html>
+css`
+.containers {
+  color: blue;
+}`
+
+/*css*/`
+.containers {
+  display: flex;
+  .hello {
+    background-color: lightblue;
+  }
+}
+`;
+
+console.log(`${`something`}.css`, `blah`);
+console.log(`${`something`}.css`, `blah`);
+
+xml`<node thing="hello">
+  <child>World</child>
+  ${true ? xml`<child>Conditional Child</child>` : xml`<child>Default Child</child>`}
+</node>`;
+
+/*xml*/`<node thing="hello">
+  <child>World</child>
+  ${true ? xml`<child>Conditional Child</child>` : xml`<child>Default Child</child>`}
+</node>`;
+
+console.log(`${`something`}.xml`, `blah`);
+console.log(`${`something`}.xml`, `blah`);
+</script>

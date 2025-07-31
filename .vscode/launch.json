@@ -11,8 +11,7 @@
 			],
 			"outFiles": [
 				"${workspaceFolder}/packages/vscode-extension/dist/**/*.js"
-			],
-			"preLaunchTask": "${defaultBuildTask}"
+			]
 		} 
 	]
 }
