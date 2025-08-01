@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.0
+
+### Minor Changes
+
+- Ready to publish
+
 ## 1.0.0
 
 ### Patch Changes

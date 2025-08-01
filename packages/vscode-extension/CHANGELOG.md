@@ -1,5 +1,11 @@
 # vscode-ttls
 
+## 1.0.0
+
+### Major Changes
+
+- Ready to publish
+
 ## 0.0.1
 
 ### Patch Changes

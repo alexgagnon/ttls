@@ -1,5 +1,11 @@
 # ttls
 
+## 2.0.0
+
+### Major Changes
+
+- Ready to publish
+
 ## 1.0.0
 
 ### Patch Changes
