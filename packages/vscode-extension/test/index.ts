@@ -6,7 +6,7 @@ html`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}>
   <ul>
     ${true ? [1, 2, 3].map(item => html`<li>${item}</li>`) : html`<li>Empty</li>`}
   </ul>
-</div>`
+</div>`;
 
 /*html*/`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}>
   <span>Test Content</span>
@@ -36,7 +36,7 @@ css`
 css`
 .containers {
   color: blue;
-}`
+}`;
 
 /*css*/`
 .containers {

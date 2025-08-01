@@ -1,4 +1,14 @@
-export function normalizeBreakpoints(breakpoints) {
+export type Breakpoints = Record<string | number, string>;
+export type BreakpointQuery = {
+  value: string;
+  query: string;
+};
+
+/**
+ * Convert a map of breakpoints into a normalized format used in other functions.
+ * Each breakpoint will have a value and a query string.
+ */
+export function normalizeBreakpoints(breakpoints: Breakpoints) {
   const keys = Object.keys(breakpoints);
   const values = Object.values(breakpoints);
   const queries = getQueryMinSizes(values);
@@ -8,16 +18,9 @@ export function normalizeBreakpoints(breakpoints) {
       query: queries[i],
     };
     return acc;
-  }, {});
+  }, {} as Record<string, BreakpointQuery>);
 
   return result;
-}
-
-/**
- * Returns the query ranges for the given breakpoints.
- */
-export function getBreakpointQueryRanges(breakpoints) {
-  return getQueryRanges(breakpoints.map(b => b.width));
 }
 
 /**
@@ -25,14 +28,14 @@ export function getBreakpointQueryRanges(breakpoints) {
  * If start is null, it will not include the lower bound.
  * If end is null, it will not include the upper bound.
  */
-export function getQueryRange(start, end) {
+export function getQueryRange(start?: string | null, end?: string | null): string {
   return `(${start == null ? '' : `${start} <= `}width${end == null ? '' : ` < ${end}`})`;
 }
 
 /**
  * Returns the range (start and end) of a query.
  */
-export function getQueryRanges(sizes) {
+export function getQueryRanges(sizes: (string | null)[]): string[] {
   return sizes.map((size, i) => {
     const start = i === 0 ? undefined : sizes[i - 1];
     const end = size;
@@ -43,14 +46,14 @@ export function getQueryRanges(sizes) {
 /** 
  * Returns the min-width of a query.
  */
-export function getQueryMinWidth(size) {
+export function getQueryMinWidth(size: string | null): string {
   return `(min-width: ${size})`;
 }
 
 /**
  * Returns the min-width of a query.
  */
-export function getQueryMinSizes(sizes) {
+export function getQueryMinSizes(sizes: (string | null)[]): string[] {
   return sizes.map(size => getQueryMinWidth(size));
 }
 
@@ -75,7 +78,7 @@ export function getWhitespace(minified = false, offset = '') {
  * my-property: value;
  * ```
  */
-export function declaration(property, value, minified = false) {
+export function declaration(property: string, value: unknown, minified = false) {
   return `${property}:${minified ? '' : ' '}${value};`;
 }
 
@@ -93,7 +96,7 @@ export function declaration(property, value, minified = false) {
  * }
  * ```
  */
-export function property(name, value, syntax = '*', inherits = false, minified = false) {
+export function property(name: string, value: unknown, syntax = '*', inherits = false, minified = false) {
   const { indent, sep, eol } = getWhitespace(minified);
   return `@property --${name} {${eol}${indent}syntax:${sep}"${syntax}";${eol}${indent}inherits:${sep}${inherits};${eol}${value != null ? `${indent}initial-value:${sep}${value};${eol}` : ''}}`;
 }
@@ -108,7 +111,7 @@ export function property(name, value, syntax = '*', inherits = false, minified =
  * --my-var: red;
  * ```
  */
-export function variable(name, value, minified = false) {
+export function variable(name: string, value: unknown, minified = false) {
   return declaration(`--${name}`, value, minified);
 }
 
@@ -125,7 +128,7 @@ export function variable(name, value, minified = false) {
  * }
  * ```
  */
-export function rule(selectors, declarations, offset = '', minified = false) {
+export function rule(selectors: string | string[], declarations: Record<string, unknown>, offset = '', minified = false) {
   const { indent, sep, eol } = getWhitespace(minified, offset);
   const sels = Array.isArray(selectors) ? selectors.join(`,${sep}`) : selectors;
   const decs = Object.entries(declarations).map(([property, value]) => declaration(property, value, minified)).map(dec => `${indent}${dec}`).join(eol);
@@ -147,7 +150,7 @@ export function rule(selectors, declarations, offset = '', minified = false) {
  * }
  * ```
  */
-export function rules(getSelectors, values, property, offset = '', minified = false) {
+export function rules(getSelectors: (value: string) => string, values: string[], property: string, offset = '', minified = false) {
   return values.map(value => rule(getSelectors(value), { [property]: value }, offset, minified)).join(minified ? '' : '\n\n');
 }
 
@@ -165,10 +168,13 @@ export function rules(getSelectors, values, property, offset = '', minified = fa
  * }
  * ```
  */
-export function blockAtRule(rule, query, rules, offset = '', minified = false) {
+export function blockAtRule(rule: string, query: string, rules: string, offset = '', minified = false) {
   const { indent, eol } = getWhitespace(minified, offset);
   return `${offset}@${rule} ${query} {${eol}${rules}${eol}${offset}}`;
 }
+
+export type GetRules = (name: string, indent: string, minified: boolean) => string;
+export type Rules = Record<string, string>;
 
 /**
  * Generates a container query block with the provided rules.
@@ -185,7 +191,7 @@ export function blockAtRule(rule, query, rules, offset = '', minified = false) {
  *  }
  * }
  */
-export function containers(getRules, queries, offset = '', minified = false) {
+export function atRules(atRule: string, getRules: GetRules, rules: Rules, offset = '', minified = false) {
   const { indent } = getWhitespace(minified, offset);
-  return Object.entries(queries).map(([name, { query }]) => blockAtRule('container', query, getRules(name, indent, minified), offset, minified)).join(minified ? '' : '\n\n');
+  return Object.entries(rules).map(([name, rule]) => blockAtRule(atRule, rule, getRules(name, indent, minified), offset, minified)).join(minified ? '' : '\n\n');
 }

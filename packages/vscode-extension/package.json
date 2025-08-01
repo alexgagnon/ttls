@@ -81,8 +81,12 @@
     "@types/node": "^24.0.14",
     "@types/react": "^19.1.8",
     "@types/vscode": "^1.101.0",
-    "ttls": "file:../lib",
+    "ttls": "file:../ttls",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "type": "commonjs"
 }

@@ -9,7 +9,7 @@ A collection of TTLs for various syntaxes like CSS, HTML, and XML.
 
 There is also the [`@ttls/helpers` package](https://npmjs.org/alexgagnon/ttls/helpers), which has common functions for various languages, like spreading an object into HTML attributes and generating CSS strings from JavaScript.
 
-When used with the companion [VS Code extension](https://marketplace.visualstudio.com/items?itemName=alexgagnon.vscode-ttls), it offers syntax highlighting as well.
+When used with the companion [VS Code extension](https://marketplace.visualstudio.com/items?itemName=alexgagnon.vscode-ttls), it offers syntax highlighting as well. The extension also highlights comments like `/*{format}*/`, e.g. `` `/*css*/`.hello { color: red }` ``.
 
 There are two versions:
 
