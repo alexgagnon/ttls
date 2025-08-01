@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.1
+
+### Patch Changes
+
+- Fix incorrect package.json
+
 ## 1.1.0
 
 ### Minor Changes

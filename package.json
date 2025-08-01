@@ -13,8 +13,8 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
-    "ttls-helpers": "file:packages/helpers",
-    "ttls-raw": "file:packages/raw",
+    "ttls-helpers": "workspace:*",
+    "ttls-raw": "workspace:*",
     "typescript": "^5.8.3"
   }
 }
