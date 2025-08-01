@@ -1,5 +1,5 @@
 import { XMLBuilder, XMLParser, XMLValidator } from 'fast-xml-parser';
-import curry from '@ttls/raw/curried/index.js';
+import curry from 'ttls-raw/curried/index.js';
 
 const parser = new XMLParser({
   processEntities: false,

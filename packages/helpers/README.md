@@ -3,8 +3,8 @@
 A collection of helper methods to support generating valid language strings from JS.
 
 ```js
-import { spread, toClassString, toStyleString, containers, rules, normalizeBreakpoints } from '@ttls/helpers';
-import { html, css } from '@ttls/raw';
+import { spread, toClassString, toStyleString, containers, rules, normalizeBreakpoints } from 'ttls-helpers';
+import { html, css } from 'ttls-raw';
 
 // <div id="something" class="one two three" style="z-index: 1; color: red"></div>
 console.log(html`<div${spread({ id: 'something', class: toClassString(['one', ['two'], { three: true, four: false }]), style: toStyleString({ 'z-index': 1, color: red })})}</div>`);

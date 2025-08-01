@@ -1,6 +1,8 @@
 {
   "name": "vscode-ttls",
   "displayName": "ttls",
+  "type": "commonjs",
+  "private": true,
   "publisher": "alexgagnon",
   "version": "1.0.0",
   "repository": {
@@ -77,7 +79,7 @@
   "license": "ISC",
   "description": "Provides syntax highlighting for various tagged template literals and comments, such as html`<div></div>` or /*html*/`<div></div>`.",
   "devDependencies": {
-    "@ttls/raw": "file:../raw",
+    "ttls-raw": "file:../raw",
     "@types/node": "^24.0.14",
     "@types/react": "^19.1.8",
     "@types/vscode": "^1.80.0",
@@ -87,6 +89,5 @@
   },
   "directories": {
     "test": "test"
-  },
-  "type": "commonjs"
+  }
 }

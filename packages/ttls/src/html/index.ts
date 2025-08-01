@@ -1,7 +1,7 @@
 import escape from 'escape-html';
 import createDOMPurify, { type WindowLike } from 'dompurify';
 import type { DOMWindow } from 'jsdom';
-import curry from '@ttls/raw/curried/index.js';
+import curry from 'ttls-raw/curried/index.js';
 
 let window: Window | DOMWindow = globalThis.window;
 

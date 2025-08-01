@@ -30,7 +30,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@ttls/raw": "file:../raw",
+    "ttls-raw": "file:../raw",
     "cssesc": "^3.0.0",
     "dompurify": "^3.2.6",
     "escape-html": "^1.0.3",

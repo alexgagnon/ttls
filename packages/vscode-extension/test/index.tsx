@@ -1,4 +1,4 @@
-import { css, html, xml } from "@ttls/raw";
+import { css, html, xml } from "ttls-raw";
 
 export default function Example() {
   return <>

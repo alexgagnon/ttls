@@ -1,5 +1,5 @@
-import { css, html, xml } from "@ttls/raw";
-import { spread } from "@ttls/helpers/html";
+import { css, html, xml } from "ttls-raw";
+import { spread } from "ttls-helpers/html";
 
 html`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}>
   <span>Test Content</span>

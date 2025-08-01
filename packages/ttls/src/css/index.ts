@@ -1,6 +1,6 @@
 import cssesc from 'cssesc';
 import { transform } from 'lightningcss';
-import curry from '@ttls/raw/curried/index.js';
+import curry from 'ttls-raw/curried/index.js';
 
 export const css = curry({
   preFuncs: cssesc,
