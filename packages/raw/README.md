@@ -5,9 +5,9 @@ Tagged Template Literals
 A collection of TTLs for various syntaxes like CSS, HTML, and XML.
 
 > [!WARNING]
-> The exports are raw and do not do any parsing or processing of arguments, so they are vulnerable to injection attacks. DO NOT use them if there will be any user generated content, and instead use the [`ttls` package](https://npmjs.org/alexgagnon/ttls), which does offer sanitizing of arguments.
+> The exports are raw and do not do any parsing or processing of arguments, so they are vulnerable to injection attacks. DO NOT use them if there will be any user generated content, and instead use the [`ttls` package](https://www.npmjs.org/package/ttls), which does offer sanitizing of arguments.
 
-There is also the [`ttls-helpers` package](https://npmjs.org/alexgagnon/ttls/helpers), which has common functions for various languages, like spreading an object into HTML attributes and generating CSS strings from JavaScript.
+There is also the [`ttls-helpers` package](https://www.npmjs.org/package/ttls-helpers), which has common functions for various languages, like spreading an object into HTML attributes and generating CSS strings from JavaScript.
 
 When used with the companion [VS Code extension](https://marketplace.visualstudio.com/items?itemName=alexgagnon.vscode-ttls), it offers syntax highlighting as well. The extension also highlights comments like `/*{format}*/`, e.g. `` `/*css*/`.hello { color: red }` ``.
 
@@ -39,7 +39,7 @@ produces
 </div>
 ```
 
-# `ttls/curried`
+# `ttls-raw/curried`
 
 Functions that return the TTL with a pipeline of functions. The functions should either return a string, or an error should be thrown. 'preFuncs' are applied only to the interpolated values while the string is being built. This is useful for things like escaping characters. 'postFuncs' are applied to the complete string, and can be used for things like sanitization, transformation, validation, etc.
 

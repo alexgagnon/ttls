@@ -1,24 +1,47 @@
-# TTL Helpers
+# TTLs Helpers
 
-A collection of helper methods to support generating valid language strings from JS.
+A collection of helper methods to support generating language strings from JS.
 
 ```js
-import { spread, toClassString, toStyleString, containers, rules, normalizeBreakpoints } from 'ttls-helpers';
+import { spread, toClassString, toStyleString, ifDefined, atRules, rules, normalizeBreakpoints } from 'ttls-helpers';
 import { html, css } from 'ttls-raw';
 
-// <div id="something" class="one two three" style="z-index: 1; color: red"></div>
-console.log(html`<div${spread({ id: 'something', class: toClassString(['one', ['two'], { three: true, four: false }]), style: toStyleString({ 'z-index': 1, color: red })})}</div>`);
+// <div title="title" id="something" class="one two three" style="z-index: 1; color: red"></div>
+console.log(html`<div${ifDefined('title', 'title')}${spread({ id: 'something', class: toClassString(['one', ['two'], { three: true, four: false }]), style: toStyleString({ 'z-index': 1, color: red })})}</div>`);
 
 const breakpoints = normalizeBreakpoints({
   xs: '576px',
   sm: '768px'
 })
 
-// @containers (min-width: 576px) {
-//   .m-1-}
-console.log(containers(
-  (alias, offset, minified) => Array.from({ length: 3 }).map((_, index) => breakpoints.map(({valuerule(`.m-${index + 1}-${alias}`, { margin: `--margin-${index + 1}` }, offset, minified)).join('\n\n'), breakpoints););
+// @container sm (min-width: 576px) {
+//   .d-hidden-sm {
+//     display: hidden;
+//   }
+
+//   .d-initial-sm {
+//     display: initial;
+//   }
+// }
+
+// @container md (min-width: 768px) {
+//   .d-hidden-md {
+//     display: hidden;
+//   }
+
+//   .d-initial-md {
+//     display: initial;
+//   }
+// }
+atRules(
+  'container',
+  (name) => rules(
+    (value) => `.d-${value}-${name}`, ['hidden', 'initial'], 'display', '  '
+  ),
+  {
+    sm: 'sm (min-width: 576px)',
+    md: 'md (min-width: 768px)'
+  }
+);
 
 ```
-
-produces
