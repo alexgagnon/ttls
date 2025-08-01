@@ -2,12 +2,13 @@
 
 Consists of two packages:
 
-- `lib` set of tagged template literals, which by themselves just act as normal template literals
-- `vscode-extension` VS Code extension that provides format-specific Intellisense to the `ttl-helpers` exports
+- `ttls` (`ttls`) set of tagged template literals, with some basic processing to prevent injection attacks.
+- `raw` (`@ttls/raw`) set of tagged template literals that just return the string with no processing.
+- `helpers` (`@ttls/helpers`) set of common functions to help generate strings for various languages, e.g. `spread` and `toClassString` for HTML, and generating CSS from JS.
+- `vscode-extension` VS Code extension that provides format-specific highlighting to the exports from the above, in addition to template literals prefixed with a comment like `/*{format}*/`, e.g. `` /*css*/`.hello { color: red }` ``
 
-## TODO
+## Prior Art
 
-- add intellisense
-- add 'escaped'
-- add 'safe': validated + escaped
-- add trimming line starts
+- es6-string-html
+- lit-html
+- inline-html

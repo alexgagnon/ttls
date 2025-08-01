@@ -14,10 +14,10 @@ const breakpoints = normalizeBreakpoints({
   sm: '768px'
 })
 
-// .
+// @containers (min-width: 576px) {
+//   .m-1-}
 console.log(containers(
-  (alias, offset, minified) => Array.from({ length: 3 }).map((_, index) => rule(`.m-${index + 1}-${alias}`, { margin: `--margin-${index + 1}` }, offset, minified)).join('\n\n'), 
-  breakpointQueries););
+  (alias, offset, minified) => Array.from({ length: 3 }).map((_, index) => breakpoints.map(({valuerule(`.m-${index + 1}-${alias}`, { margin: `--margin-${index + 1}` }, offset, minified)).join('\n\n'), breakpoints););
 
 ```
 
