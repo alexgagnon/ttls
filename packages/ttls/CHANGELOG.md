@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.2
+
+### Patch Changes
+
+- dfcffa2: Fix broken dependency due to npm workspace links
+
 ## 1.1.1
 
 ### Patch Changes
