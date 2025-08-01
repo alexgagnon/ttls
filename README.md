@@ -1,6 +1,6 @@
-# TTL Helpers
+# TTLs
 
-Consists of two packages:
+Supports embedded languages inside tagged template literals.
 
 - `ttls` (`ttls`) set of tagged template literals, with some basic processing to prevent injection attacks.
 - `raw` (`@ttls/raw`) set of tagged template literals that just return the string with no processing.
