@@ -1,7 +1,10 @@
 import { css, html, xml } from "ttls-raw";
 import { spread } from "ttls-helpers/html";
 
-html`<div class="test" ${spread({ id: "test-id", 'data-test': 'value' })}>
+/*style*/`color: red;`
+
+html`<div ${ifDefined('title', 'other')}></div>`;
+html`<div class="test"${spread({ id: "test-id", 'data-test': 'value' })}>
   <span>Test Content</span>
   <ul>
     ${true ? [1, 2, 3].map(item => html`<li>${item}</li>`) : html`<li>Empty</li>`}
@@ -62,3 +65,5 @@ xml`<node thing="hello">
 
 console.log(`${`something`}.xml`, `blah`);
 console.log(`${`something`}.xml`, `blah`);
+
+/*sql*/`SELECT * FROM table WHERE id = ${1} AND name = ${'test'}`;

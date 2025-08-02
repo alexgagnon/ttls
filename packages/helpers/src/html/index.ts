@@ -52,6 +52,11 @@ export function toStyleString(...styles: StyleValue[]): string {
   return styleStrings.join(' ').trim();
 }
 
+// TODO: confirm if this is "unique enough"
+export function getUniqueId(prefix: string = ''): string {
+  return `${prefix ? `${prefix}-` : ''}${Date.now().toString(36)}`;
+}
+
 // TODO
 // export function toggleBooleanAttribute(element: HTMLElement, attribute: string, type: string) {
 //   let trueValue, falseValue;

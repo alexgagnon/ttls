@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Style TTL",
+  "scopeName": "source.style.ttl",
+  "injectionSelector": "L:source.js -comment -string, L:source.ts, L:source.jsx, L:source.tsx, L:meta.embedded.block.html source.js",
+  "patterns": [
+    {
+      "include": "#style-tagged-template"
+    },
+    {
+      "include": "source.js#template-substitution-element"
+    }
+  ],
+  "repository": {
+    "style-tagged-template": {
+      "name": "meta.template.string.style.js",
+      "begin": "(\/\\*+\\s*style\\s*\\*+\/|\\bstyle)(`)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.function.tagged-template.js" },
+        "2": { "name": "punctuation.definition.string.template.begin.js" }
+      },
+      "end": "(`)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.string.template.end.js" }
+      },
+      "patterns": [
+        {
+          "include": "source.js#template-substitution-element"
+        },
+        {
+          "include": "#css-property-declarations"
+        }
+      ]
+    },
+    "css-property-declarations": {
+      "patterns": [
+        {
+          "include": "source.css#property-list"
+        },
+        {
+          "include": "source.css#property-names"
+        },
+        {
+          "include": "source.css#property-values"
+        },
+        {
+          "include": "source.css#string-double"
+        },
+        {
+          "include": "source.css#string-single"
+        },
+        {
+          "include": "source.css#numeric-values"
+        },
+        {
+          "include": "source.css#color-values"
+        },
+        {
+          "include": "source.css#comment-block"
+        },
+        {
+          "name": "meta.property-name.css",
+          "match": "\\b[a-zA-Z-]+(?=\\s*:)",
+          "captures": {
+            "0": { "name": "support.type.property-name.css" }
+          }
+        },
+        {
+          "name": "punctuation.separator.key-value.css",
+          "match": ":"
+        },
+        {
+          "name": "punctuation.terminator.rule.css",
+          "match": ";"
+        }
+      ]
+    }
+  }
+}

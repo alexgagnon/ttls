@@ -41,10 +41,10 @@ produces
 
 # `ttls-raw/curried`
 
-Functions that return the TTL with a pipeline of functions. The functions should either return a string, or an error should be thrown. 'preFuncs' are applied only to the interpolated values while the string is being built. This is useful for things like escaping characters. 'postFuncs' are applied to the complete string, and can be used for things like sanitization, transformation, validation, etc.
+Function that returns a TTL with a pipeline of functions. The functions should either return a string, or throw an error. 'preFuncs' are applied only to the interpolated values (expressions inside the `${}`) while the string is being built. This is useful for things like escaping characters. 'postFuncs' are applied to the complete string, and can be used for things like sanitization, transformation, validation, etc.
 
 ```js
-import { css as curry } from 'ttls-raw/curried';
+import ttl from 'ttls-raw/curried';
 
 const swapRedForBlue = (css: string) => return css.replace('red', 'blue');
 const validateCss = (css: string) => {
@@ -54,7 +54,7 @@ const validateCss = (css: string) => {
   return css;
 };
 
-const css = curry(preFuncs: [swapRedForBlue], postFuncs: [validateCss]);
+const css = ttl(preFuncs: [swapRedForBlue], postFuncs: [validateCss]);
 
 console.log(css`.hello { color: red; }`); // => .hello { color: red; }
 console.log(css`.hello { color: ${ 'red' }; }`); // => .hello { color: blue; }

@@ -61,6 +61,32 @@
           "text.html.derivative",
           "text.html.handlebars"
         ],
+        "scopeName": "source.style.ttl",
+        "path": "./syntaxes/style-ttl.tmLanguage.json"
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.cshtml",
+          "text.html.derivative",
+          "text.html.handlebars"
+        ],
+        "scopeName": "source.sql.ttl",
+        "path": "./syntaxes/sql-ttl.tmLanguage.json"
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx",
+          "text.html.cshtml",
+          "text.html.derivative",
+          "text.html.handlebars"
+        ],
         "scopeName": "source.xml.ttl",
         "path": "./syntaxes/xml-ttl.tmLanguage.json"
       }
@@ -72,12 +98,13 @@
     "vscode-extension",
     "css",
     "html",
+    "sql",
     "svg",
     "xml"
   ],
   "author": "alexgagnon",
   "license": "ISC",
-  "description": "Provides syntax highlighting for various tagged template literals and comments, such as html`<div></div>` or /*html*/`<div></div>`.",
+  "description": "Provides syntax highlighting for various tagged template literals and comments, such as html`<div></div>`, css`.class {}`, sql`SELECT * FROM table`, or /*html*/`<div></div>`.",
   "devDependencies": {
     "ttls-raw": "file:../raw",
     "@types/node": "^24.0.14",
