@@ -1,6 +1,9 @@
+**/*
 ../**/*
 ../../**/*
-src/
-test/
-NOTES.md
-tsconfig.json
+!LICENSE
+!README.md
+!CHANGELOG.md
+!package.json
+!dist/**
+!syntaxes/**

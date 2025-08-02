@@ -29,5 +29,5 @@ Currently supported file types:
 - .hbs
 - .cshtml
 
-See [CONTRIBUTING.md](https://github.com/alexgagnon/ttls/CONTRIBUTING.md) for a guide on how you can add additional formats.
+See [CONTRIBUTING.md](https://github.com/alexgagnon/ttls/blob/main/CONTRIBUTING.md) for a guide on how you can add additional formats.
 
