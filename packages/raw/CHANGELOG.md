@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.0
+
+### Minor Changes
+
+- e882c1a: Additional syntaxes (style, sql), clean up READMEs, new helpers (getUniqueId)
+
 ## 2.0.0
 
 ### Major Changes

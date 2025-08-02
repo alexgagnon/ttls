@@ -1,5 +1,16 @@
 # ttls
 
+## 1.2.0
+
+### Minor Changes
+
+- e882c1a: Additional syntaxes (style, sql), clean up READMEs, new helpers (getUniqueId)
+
+### Patch Changes
+
+- Updated dependencies [e882c1a]
+  - ttls-raw@1.1.0
+
 ## 1.1.2
 
 ### Patch Changes
