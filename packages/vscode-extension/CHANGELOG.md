@@ -1,5 +1,11 @@
 # vscode-ttls
 
+## 1.1.1
+
+### Patch Changes
+
+- fixed link in readme, removed unneeded file
+
 ## 1.1.0
 
 ### Minor Changes
