@@ -69,6 +69,20 @@ export function getWhitespace(minified = false, offset = '') {
 }
 
 /**
+ * Generates a CSS variable name.
+ * ```js
+ * varName('one', 'two')
+ * ```
+ * will produce:
+ * ```css
+ * --one-two
+ * ```
+ */
+export function varName(args: string | string[], join: string = '-'): string {
+  return `--${(Array.isArray(args) ? args : [args]).join(join)}`;
+}
+
+/**
  * Generates a CSS property declaration.
  * ```js
  * declaration('my-property', 'value', true)
@@ -102,6 +116,7 @@ export function property(name: string, value: unknown, syntax = '*', inherits = 
 }
 
 /**
+ * @deprecated - use `varName` width `declaration` instead.
  * Generates a CSS variable declaration.
  * ```js
  * variable('my-var', 'red')
@@ -112,7 +127,7 @@ export function property(name: string, value: unknown, syntax = '*', inherits = 
  * ```
  */
 export function variable(name: string, value: unknown, minified = false) {
-  return declaration(`--${name}`, value, minified);
+  return declaration(name, value, minified);
 }
 
 /**

@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.2
+
+### Patch Changes
+
+- Updated README.md, added varName method to helpers
+
 ## 1.1.1
 
 ### Patch Changes

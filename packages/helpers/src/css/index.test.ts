@@ -1,7 +1,17 @@
 import { describe, it } from 'vitest';
-import { rules, rule, blockAtRule, property, atRules } from './index.js';
+import { varName, rules, rule, blockAtRule, property, atRules } from './index.js';
 
 describe('css', () => {
+  it.for([
+    ['one', '--one'],
+    [['one', 'two'], '--one-two'],
+    [['one', 'two', 'three'], '--one-two-three'],
+    [['one', 'two'], '--one_two', '_'],
+  ])('%s should generate %s', ([input, output], { expect }) => {
+    const result = varName(input);
+    expect(result).toBe(output);
+  });
+
   it('should generate container queries', ({ expect }) => {
     const result = atRules(
       'container',

@@ -1,7 +1,9 @@
 import { css, html, xml } from "ttls-raw";
 import { spread, ifDefined, toClassString, toStyleString, getUniqueId } from "ttls-helpers/html";
 
-console.log(html`<div ${ifDefined('title', 'defined')}</div>`)
+/*style*/`color: red;`;
+
+console.log(html`<div ${ifDefined('title', 'defined')}></div>`);
 
 console.log(html`<div ${ifDefined('hello', 'there')} class="test"${spread({ id: "test-id", 'data-test': 'value' }, 'second')}>
   <span>Test Content</span>
