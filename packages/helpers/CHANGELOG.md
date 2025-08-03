@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.1
+
+### Patch Changes
+
+- Improved READMEs, added keywords in package.json
+
 ## 1.1.0
 
 ### Minor Changes

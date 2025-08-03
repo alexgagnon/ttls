@@ -6,5 +6,6 @@
     "module": "node16",
     "target": "es2022"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/*.test.ts"]
 }

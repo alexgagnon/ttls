@@ -5,13 +5,16 @@ Tagged Template Literals
 A collection of TTLs for various syntaxes like CSS, HTML, and XML.
 
 > [!WARNING]
-> The exports are raw and do not do any parsing or processing of arguments, so they are vulnerable to injection attacks. DO NOT use them if there will be any user generated content, and instead use the [`ttls` package](https://www.npmjs.org/package/ttls), which does offer sanitizing of arguments.
-
-There is also the [`ttls-helpers` package](https://www.npmjs.org/package/ttls-helpers), which has common functions for various languages, like spreading an object into HTML attributes and generating CSS strings from JavaScript.
+> The exports are raw and do not do any parsing or processing of arguments, so they are vulnerable to injection attacks. DO NOT use them if there will be any user generated content, and instead use the [`ttls` package](https://www.npmjs.org/package/ttls), which does offer some default sanitizing of arguments.
 
 When used with the companion [VS Code extension](https://marketplace.visualstudio.com/items?itemName=alexgagnon.vscode-ttls), it offers syntax highlighting as well. The extension also highlights comments like `/*{format}*/`, e.g. `` `/*css*/`.hello { color: red }` ``.
 
-There are two versions:
+You probably either want to use the comment based syntax (`/*{format}*/`) or the `ttls` package rather than this package directly.
+
+There is also the [`ttls-helpers` package](https://www.npmjs.org/package/ttls-helpers), which has common functions for various languages, like spreading an object into HTML attributes and generating CSS strings from JavaScript.
+
+
+There are two exports:
 
 ## `ttls-raw`
 

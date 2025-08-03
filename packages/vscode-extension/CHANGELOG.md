@@ -1,5 +1,11 @@
 # vscode-ttls
 
+## 1.1.2
+
+### Patch Changes
+
+- Improved READMEs, added keywords in package.json
+
 ## 1.1.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "ttls-raw",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -13,7 +13,16 @@
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "template-literals",
+    "tagged-template-literals",
+    "html",
+    "css",
+    "xml",
+    "sql",
+    "javascript",
+    "typescript"
+  ],
   "author": "alexgagnon",
   "license": "ISC",
   "description": "Tagged template literals for various languages.",

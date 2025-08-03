@@ -1,5 +1,13 @@
 # ttls
 
+## 1.2.1
+
+### Patch Changes
+
+- Improved READMEs, added keywords in package.json
+- Updated dependencies
+  - ttls-raw@1.1.1
+
 ## 1.2.0
 
 ### Minor Changes

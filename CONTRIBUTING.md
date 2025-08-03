@@ -9,7 +9,7 @@
 
 ## Add a new language:
 
-- add it to the `raw` package under `src/index.ts` and `src/curried/index.ts`
+- if it makes sense to have a TTL version instead of just a comment, add it to the `raw` package under `src/index.ts`
 - if there are special versions that would be helpful (e.g. escaping, preventing injection attacks, etc.), add it to the `ttls` package under `src/{format}/index.ts`, add it to the `src/index.ts` export file, update the `package.json` `.exports` field to include it
 - in `vscode-extension` package, create a `syntaxes/{format}-ttl.tmLanguage.json` file (copy the `example.tmLanguage.json` file and update the `TODO` sections), add a new object in the `contributes.grammars` field in `package.json` the same as the others other than `scopeName`, which should be `source.{format}.ttl`, then follow the "Add VS Code highlighting..." section above
 - if there are common, helpful functions, consider adding them to the `helpers` package

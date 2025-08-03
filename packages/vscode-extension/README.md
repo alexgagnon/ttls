@@ -1,6 +1,6 @@
 # Tagged Template Literals VS Code Extension
 
-Provides syntax highlighting for languages embedded in tagged template literals using either an inline comment like like `` /*{format}*/`stuff.../` ``, e.g. `` `/*css*/`.hello { color: red }` ``, or tagged template literals of the form `` {format}`stuff...` ``, e.g. `` css`.hello { color: red; }` `` (for example, from the [`ttls` package](https://www.npmjs.com/package/ttls)).
+Provides syntax highlighting for languages embedded in tagged template literals using either an inline comment like `` /*{format}*/`stuff.../` ``, e.g. `` `/*css*/`.hello { color: red }` ``, or tagged template literals of the form `` {format}`stuff...` ``, e.g. `` css`.hello { color: red; }` `` (for example, from the [`ttls` package](https://www.npmjs.com/package/ttls)).
 
 ```js
 // each of these will have format specific syntax highlighting when 

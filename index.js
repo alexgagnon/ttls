@@ -62,7 +62,6 @@ console.log(/*css*/`
 `);
 
 console.log(`${`something`}.css`, `blah`);
-console.log(`${`something`}.css`, `blah`);
 
 console.log(xml`<node thing="hello">
   <child>World</child>
@@ -74,5 +73,4 @@ console.log(/*xml*/`<node thing="hello">
   ${true ? xml`<child>Conditional Child</child>` : xml`<child>Default Child</child>`}
 </node>`);
 
-console.log(`${`something`}.xml`, `blah`);
 console.log(`${`something`}.xml`, `blah`);

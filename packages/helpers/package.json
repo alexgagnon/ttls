@@ -1,6 +1,6 @@
 {
   "name": "ttls-helpers",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -15,7 +15,18 @@
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "html",
+    "css",
+    "xml",
+    "sql",
+    "javascript",
+    "typescript",
+    "utility",
+    "helpers",
+    "template-literals",
+    "tagged-template-literals"
+  ],
   "author": "alexgagnon",
   "license": "ISC",
   "description": "Helpers for generating valid strings for various languages.",
