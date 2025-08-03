@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.4
+
+### Patch Changes
+
+- Fix missing build output
+
 ## 1.1.3
 
 ### Patch Changes

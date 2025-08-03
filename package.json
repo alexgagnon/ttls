@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prepublish": "pnpm build",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish",
