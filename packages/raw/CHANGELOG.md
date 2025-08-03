@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.2
+
+### Patch Changes
+
+- Removed unneeded deps
+
 ## 1.1.1
 
 ### Patch Changes
