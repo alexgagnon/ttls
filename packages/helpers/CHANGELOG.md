@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.3
+
+### Patch Changes
+
+- Fix README
+
 ## 1.1.2
 
 ### Patch Changes

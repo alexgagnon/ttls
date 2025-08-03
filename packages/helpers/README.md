@@ -16,18 +16,13 @@ html`<div ${ifDefined('title', 'defined')}${spread({ id: getUniqueId(), class: t
 produces:
 
 ```html
-<div title="something" id="mduc8trz" class="one two three" style="z-index: 1; color: red;">
+<div title="defined" id="mduc8trz" class="one two three" style="z-index: 1; color: red;">
   <span>Hello!</span>
 </div>
 ```
 
 ```js
-import { atRules, rules, normalizeBreakpoints } from 'ttls-helpers';
-
-const breakpoints = normalizeBreakpoints({
-  xs: '576px',
-  sm: '768px'
-});
+import { atRules, rules } from 'ttls-helpers';
 
 atRules(
   'container',
