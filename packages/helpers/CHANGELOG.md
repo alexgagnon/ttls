@@ -1,5 +1,11 @@
 # ttls
 
+## 1.1.6
+
+### Patch Changes
+
+- Bump versions
+
 ## 1.1.5
 
 ### Patch Changes

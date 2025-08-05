@@ -1,5 +1,13 @@
 # ttls
 
+## 1.2.4
+
+### Patch Changes
+
+- Bump versions
+- Updated dependencies
+  - ttls-raw@1.1.3
+
 ## 1.2.3
 
 ### Patch Changes
