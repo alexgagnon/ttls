@@ -96,6 +96,12 @@ export function declaration(property: string, value: unknown, minified = false) 
   return `${property}:${minified ? '' : ' '}${value};`;
 }
 
+export function declarations(properties: Record<string, unknown>, indent: string = '  ', minified = false): string {
+  return Object.entries(properties)
+    .map(([property, value]) => `${indent}${declaration(property, value, minified)}`)
+    .join(minified ? '' : '\n');
+}
+
 /** 
  * Generates a CSS property declaration.
  * ```js
@@ -131,9 +137,20 @@ export function variable(name: string, value: unknown, minified = false) {
 }
 
 /**
- * Generates a CSS rule with the provided selectors and declarations.
+ * @deprecated - use `blockRule` instead.
+ */
+export function rule(selectors: string | string[], decls: Record<string, unknown>, offset = '', minified = false) {
+  const { indent, sep, eol } = getWhitespace(minified, offset);
+  const sels = Array.isArray(selectors) ? selectors.join(`,${sep}`) : selectors;
+  const decs = declarations(decls, indent, minified);
+  return `${offset}${sels}${sep}{${eol}${decs}${eol}${offset}}`;
+}
+
+/**
+ * 
+ * Generates a CSS rule with the provided selectors and declarations or nested blocks
  * ```js
- * rule('.my-class', { 'color': 'red', 'font-size': '16px' })
+ * blockRule('.my-class', { 'color': 'red', 'font-size': '16px' })
  * ```
  * will produce:
  * ```css
@@ -142,11 +159,31 @@ export function variable(name: string, value: unknown, minified = false) {
  *   font-size: 16px;
  * }
  * ```
+ * 
+ * Can also be used for nested block rules:
+ * ```js
+ * blockRule('.my-class', blockRule('.nested', Object.entries({ 'display': 'block' }).map(entry => declaration), '  '))
+ * ```
+ * will produce:
+ * ```css
+ * .my-class {
+ *   .nested {
+ *     display: block;
+ *   }
+ * }
+ * ```
  */
-export function rule(selectors: string | string[], declarations: Record<string, unknown>, offset = '', minified = false) {
+export function blockRule(selectors: string | string[], rules: string | Record<string, unknown> = '', offset = '', minified = false) {
   const { indent, sep, eol } = getWhitespace(minified, offset);
   const sels = Array.isArray(selectors) ? selectors.join(`,${sep}`) : selectors;
-  const decs = Object.entries(declarations).map(([property, value]) => declaration(property, value, minified)).map(dec => `${indent}${dec}`).join(eol);
+  let decs: string;
+  if (rules != null && typeof rules === 'object') {
+    decs = declarations(rules, indent, minified);
+  }
+  else if (typeof rules === 'string') {
+    decs = rules;
+  }
+  else throw new Error('`rules` must be "string | Record<string, unknown>');
   return `${offset}${sels}${sep}{${eol}${decs}${eol}${offset}}`;
 }
 
@@ -170,6 +207,7 @@ export function rules(getSelectors: (value: string) => string, values: string[],
 }
 
 /**
+ * @deprecated - use "blockRule"
  * Generates a block at-rule with the provided rule, query, and rules.
  * ```js
  * blockAtRule('media', '(max-width: 600px)', '.d-flex { display: flex; }', '  ', false)
@@ -183,15 +221,16 @@ export function rules(getSelectors: (value: string) => string, values: string[],
  * }
  * ```
  */
-export function blockAtRule(rule: string, query: string, rules: string, offset = '', minified = false) {
-  const { indent, eol } = getWhitespace(minified, offset);
-  return `${offset}@${rule} ${query} {${eol}${rules}${eol}${offset}}`;
+export function blockAtRule(rule: string, block: string, offset = '', minified = false) {
+  const { eol } = getWhitespace(minified, offset);
+  return `${offset}@${rule} {${eol}${block}${eol}${offset}}`;
 }
 
 export type GetRules = (name: string, indent: string, minified: boolean) => string;
 export type Rules = Record<string, string>;
 
 /**
+ * @deprecated - use `blockRule` instead.
  * Generates a container query block with the provided rules.
  * ```js
  * containers((name) => `.c-${name}`, {
@@ -208,5 +247,5 @@ export type Rules = Record<string, string>;
  */
 export function atRules(atRule: string, getRules: GetRules, rules: Rules, offset = '', minified = false) {
   const { indent } = getWhitespace(minified, offset);
-  return Object.entries(rules).map(([name, rule]) => blockAtRule(atRule, rule, getRules(name, indent, minified), offset, minified)).join(minified ? '' : '\n\n');
+  return Object.entries(rules).map(([name, rule]) => blockAtRule(atRule, getRules(name, indent, minified), offset, minified)).join(minified ? '' : '\n\n');
 }
