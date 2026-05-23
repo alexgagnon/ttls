@@ -57,6 +57,13 @@ export function getUniqueId(prefix: string = ''): string {
   return `${prefix ? `${prefix}-` : ''}${Date.now().toString(36)}`;
 }
 
+export function componentize(children: unknown, tag: keyof HTMLElementTagNameMap, attrs: Record<string, unknown> | string, data: Record<string, unknown>): () => string {
+  return function render() {
+    // Implementation goes here
+    return `<${tag}${typeof attrs === 'string' ? attrs : spread(attrs)}>${children}</${tag}>`;
+  }
+}
+
 // TODO
 // export function toggleBooleanAttribute(element: HTMLElement, attribute: string, type: string) {
 //   let trueValue, falseValue;
